@@ -1,0 +1,26 @@
+.sign-in__form {
+  margin: 0 60px 10px 60px;
+  text-align: center;
+  .input {
+    margin: 0;
+    width: 100%;
+  }
+  .label {
+    display: inline;
+    font-size: 13px;
+  }
+  .field {
+    position: relative;
+    margin-bottom: 10px;
+    .right {
+      position: absolute;
+      right: 7px;
+      top: 7px;
+    }
+  }
+}
+
+.register__message {
+  margin: 10px;
+  text-align: center;
+}

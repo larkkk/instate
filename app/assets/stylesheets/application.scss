@@ -15,3 +15,48 @@
  *= require_tree .
  *= require_self
  */
+
+/*
+ * ---------------------------------------------
+ * layout
+ * =============================================
+ */
+
+body {
+  background-color: #fafafa;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.container {
+  max-width: 460px;
+  .box {
+    margin-top: 12px;
+  }
+  .sign-in__box {
+    margin-top: 20px;
+  }
+}
+
+.footer {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+/*
+ * ---------------------------------------------
+ * component
+ * =============================================
+ */
+
+.copyright {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+}
