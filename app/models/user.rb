@@ -4,5 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   validates :identify, uniqueness: true
-  has_many :posts
+  has_many :posts, :likes
+
+  has_many :liked_posts, through: :likes, source: :post
 end
