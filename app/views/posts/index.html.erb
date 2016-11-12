@@ -1,3 +1,7 @@
+<p>팔로워 : <%= current_user.followers.length %></p>
+<p>팔로잉 : <%= current_user.followings.length %></p>
+<%= link_to '글 작성하기', new_post_path %>
+
 <% @posts.each do |post| %>
     <%= render partial: "post", object: post %>
 <% end %>
