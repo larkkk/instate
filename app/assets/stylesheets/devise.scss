@@ -1,4 +1,5 @@
-.sign-in__form {
+.sign-in__form,
+.sign-up__form {
   margin: 0 60px 10px 60px;
   text-align: center;
   .input {
@@ -23,4 +24,18 @@
 .register__message {
   margin: 10px;
   text-align: center;
+}
+
+.information__message {
+  margin: 20px 10px 10px 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}
+
+.alert__message {
+  margin: 5px 0 0 0;
+  font-size: 13px;
+  color: #666;
+  text-align: right;
 }
