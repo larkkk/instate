@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'posts#index'
-  resources :posts, except: [:show]
+  resources :posts, except: [:show] do
+    post "/like", to: "likes#like_toggle"
+  end
 end
