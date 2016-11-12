@@ -6,11 +6,16 @@
   </div>
 
   <div class="card-action">
-    <a href="#">좋아요</a>
+    <%= post.likes.size %> 명이 좋아합니다.
+    <% if current_user.is_like?(post) %>
+        <%= link_to "좋아요 취소", post_like_path(post), method: "post" %>
+    <% else %>
+        <%= link_to "좋아요", post_like_path(post), method: "post" %>
+    <% end %>
     <a href="#">댓글 달기</a>
     <% if current_user.id == post.user.id %>
         <%= link_to "삭제", post_path(post), method: "delete", class: "right" %>
-        <%= link_to "수정", edit_post_path(post), class: "right"%>
+        <%= link_to "수정", edit_post_path(post), class: "right" %>
     <% end %>
   </div>
 </div>
