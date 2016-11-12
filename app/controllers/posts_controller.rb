@@ -8,7 +8,13 @@ class PostsController < ApplicationController
       redirect_to new_user_registration_path
     end
 
-    @posts = Post.all.order('created_at desc')
+    # @posts = Post.all.order('created_at desc')
+    view_users = [current_user]
+    current_user.followings.each do |u|
+      view_users << u
+    end
+
+    @posts = Post.where(user_id: view_users).order('created_at desc')
     @posts_count = current_user.posts.length
   end
 
@@ -27,7 +33,7 @@ class PostsController < ApplicationController
 
   def update
     @post.content = params[:content]
-    @post.image   = params[:image] if params[:image].present?
+    @post.image = params[:image] if params[:image].present?
 
     if @post.save
       redirect_to root_path
