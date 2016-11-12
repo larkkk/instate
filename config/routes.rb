@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   root 'posts#index'
   resources :posts, except: [:show] do
     post "/like", to: "likes#like_toggle"
+    resources :comments, only: [:create, :destroy]
   end
 end
