@@ -1,2 +1,20 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<% @posts.each do |post| %>
+    <div class="box">
+      <div class="card-content">
+        <span class="card-title"><%= post.user.name %></span>
+        <span><%= post.created_at %></span>
+        <p><%= post.content %></p>
+      </div>
+
+      <div class="card-action">
+        <a href="#">좋아요</a>
+        <a href="#">댓글 달기</a>
+        <% if current_user.id == post.user.id %>
+            <%= link_to "삭제", post_path(post), method: "delete", class: "right" %>
+            <%= link_to "수정", edit_post_path(post), class: "right"%>
+        <% end %>
+      </div>
+    </div>
+<% end %>
+
+<%= link_to 'logout', destroy_user_session_path(), method: :delete %>
