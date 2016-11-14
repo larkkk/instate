@@ -8,9 +8,9 @@
     <div class="profile__info nine columns">
       <div class="field">
         <span class="identify"><%= @find_user.identify %></span>
-        <a href="#">
-          <button class="profile-button">프로필 편집</button>
-        </a>
+        <%= link_to edit_user_registration_path do %>
+            <button class="profile-button">프로필 편집</button>
+        <% end %>
       </div>
       <div class="field">
         <ul class="profile__info-list">
@@ -31,6 +31,20 @@
             <b><%= @find_user.name %></b>
           </li>
         </ul>
+      </div>
+      <div class="field">
+        <% if user_signed_in? && current_user != @find_user %>
+            <% if current_user.followings.include?(@find_user) %>
+                <%= form_tag follow_path(@find_user.id), method: :delete, class: "right" do %>
+                    <button class="profile-button">팔로우 취소</button>
+                <% end %>
+            <% else %>
+                <%= form_tag follows_path, class: "right" do %>
+                    <input type="hidden" name="followed_id" value="<%= @find_user.id %>"/>
+                    <button class="profile-button button-primary">팔로우</button>
+                <% end %>
+            <% end %>
+        <% end %>
       </div>
     </div>
   </header>
