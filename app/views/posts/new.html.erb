@@ -2,6 +2,10 @@
   <div class="card-title">새 글 작성하기</div>
   <%= form_tag posts_path do %>
       <div class="input-field">
+        <%= file_field_tag :image %>
+      </div>
+
+      <div class="input-field">
         <%= text_area_tag :content, nil, class: "materialize-textarea", placeholder: "무슨 생각을 하고 있나요?" %>
       </div>
 

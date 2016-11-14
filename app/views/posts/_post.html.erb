@@ -9,10 +9,16 @@
             <% end %>
         <% else %>
             <%= form_tag follows_path, class: "right" do %>
-                <input type="hidden" name="followed_id" value="<%= post.user.id %>" />
+                <input type="hidden" name="followed_id" value="<%= post.user.id %>"/>
                 <button class="btn">팔로우</button>
             <% end %>
         <% end %>
+    <% end %>
+
+    <% if post.image.url %>
+        <div class="card-image">
+          <img src="<%= post.image.url %>"/>
+        </div>
     <% end %>
 
     <p><%= post.content %></p>
