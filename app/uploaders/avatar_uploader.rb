@@ -7,7 +7,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   version :thumb do
-    process :resize_to_limit => [28, 28]
+    process :resize_to_limit => [64, 64]
   end
 
   # Choose what kind of storage to use for this uploader:
