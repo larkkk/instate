@@ -1,3 +1,150 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.global__header {
+  position: relative;
+  height: 63px;
+  border-bottom: 1px #e6e6e6 solid;
+  background-color: #fff;
+  .logo {
+    position: absolute;
+    top: 14px;
+    left: 0;
+    display: block;
+    width: 176px;
+    height: 35px;
+    background-image: url(//instagramstatic-a.akamaihd.net/h1/sprites/core/a3d82f.png);
+    background-size: 352px 288px;
+    background-position: -176px 0;
+  }
+  .right {
+    position: absolute;
+    top: 19px;
+    right: 0;
+  }
+}
+
+.action__list {
+  margin: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 15px;
+    vertical-align: middle;
+
+    .explode {
+      height: 24px;
+      width: 24px;
+      background-image: url(//instagramstatic-a.akamaihd.net/h1/sprites/core/a3d82f.png);
+      background-size: 352px 288px;
+      background-position: -26px -224px;
+    }
+    .alert {
+      height: 24px;
+      width: 24px;
+      background-image: url(//instagramstatic-a.akamaihd.net/h1/sprites/core/a3d82f.png);
+      background-size: 352px 288px;
+      background-position: -176px -224px;
+    }
+    .profile {
+      height: 24px;
+      width: 24px;
+      background-image: url(//instagramstatic-a.akamaihd.net/h1/sprites/core/a3d82f.png);
+      background-size: 352px 288px;
+      background-position: -326px -224px;
+    }
+  }
+}
+
+.post__header {
+  position: relative;
+  padding: 14px 20px;
+  border-bottom: 1px solid #efefef;
+
+  .post__author {
+    .author {
+      color: #000;
+      .thumbnail {
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        vertical-align: middle;
+      }
+    }
+  }
+  .right {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+  .post__date {
+    color: #666;
+  }
+}
+
+.post__content {
+  .post__image img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.post__like-toggle {
+  color: #666;
+  font-size: 14px;
+}
+
+.post__footer {
+  padding: 0 24px;
+  border-top: 1px solid #efefef;
+
+  .post__like-field {
+    margin-top: 15px;
+    margin-bottom: 7px;
+  }
+  .post__comment-field {
+    margin-top: 7px;
+    margin-bottom: 15px;
+    border-top: 1px solid #efefef;
+  }
+}
+
+.post__footer-like {
+  display: inline;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.post__footer-author {
+  font-weight: bold;
+}
+
+.post__comment-list {
+  margin: 0;
+  list-style: none;
+  li {
+    margin: 0;
+  }
+  .identify {
+    font-weight: bold;
+  }
+}
+
+input.post__comment-content {
+  width: 100%;
+  margin: 0;
+  border: none;
+  resize: none;
+  &:focus {
+    border: none;
+  }
+}
+
+.comment__form {
+  margin: 0;
+}
