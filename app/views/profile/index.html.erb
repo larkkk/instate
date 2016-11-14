@@ -8,8 +8,10 @@
     <div class="profile__info nine columns">
       <div class="field">
         <span class="identify"><%= @find_user.identify %></span>
-        <%= link_to edit_user_registration_path do %>
-            <button class="profile-button">프로필 편집</button>
+        <% if @find_user == current_user %>
+            <%= link_to edit_user_registration_path do %>
+                <button class="profile-button">프로필 편집</button>
+            <% end %>
         <% end %>
       </div>
       <div class="field">
