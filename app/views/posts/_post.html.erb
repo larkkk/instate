@@ -37,7 +37,7 @@
           <ul class="post__comment-list">
             <% post.comments.each do |comment| %>
                 <li>
-                  <span class="identify"><%= comment.user.identify %></span>
+                  <%= link_to comment.user.identify, '/' + comment.user.identify, class: 'identify' %>
                   <span class="content"><%= comment.content %></span>
 
                   <%# if comment.user.id == current_user.id %>
@@ -55,20 +55,6 @@
     </div>
   </div>
 
-  <div class="card-content">
-    <% if user_signed_in? && current_user != post.user %>
-        <% if current_user.followings.include?(post.user) %>
-            <%= form_tag follow_path(post.user.id), method: :delete, class: "right" do %>
-                <button class="btn">팔로우 취소</button>
-            <% end %>
-        <% else %>
-            <%= form_tag follows_path, class: "right" do %>
-                <input type="hidden" name="followed_id" value="<%= post.user.id %>"/>
-                <button class="btn">팔로우</button>
-            <% end %>
-        <% end %>
-    <% end %>
-  </div>
   <%# if current_user.id == post.user.id %>
   <%# link_to "삭제", post_path(post), method: "delete", class: "right" %>
   <%# link_to "수정", edit_post_path(post), class: "right" %>
