@@ -1,6 +1,6 @@
 <div class="card-content">
   <div class="card-title">새 글 작성하기</div>
-  <%= form_tag posts_path do %>
+  <%= form_tag posts_path, multipart: true do %>
       <div class="input-field">
         <%= file_field_tag :image %>
       </div>
