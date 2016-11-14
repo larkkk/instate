@@ -1,4 +1,9 @@
-<%= link_to '글 작성하기', new_post_path %>
+<div class="post__write-wrap box">
+  <%= link_to new_post_path do %>
+      <div class="post__write-icon"></div>
+      <span class="post__write">포스트 작성하기</span>
+  <% end %>
+</div>
 
 <% @posts.each do |post| %>
     <%= render partial: "post", object: post %>

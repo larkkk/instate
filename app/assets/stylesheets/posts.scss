@@ -58,6 +58,26 @@
   }
 }
 
+.post__write-wrap {
+  padding: 10px;
+  text-align: center;
+  span {
+    display: inline-block;
+    margin-top: 10px;
+    color: #3897f0;
+  }
+}
+
+.post__write-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  background-image: url(//instagramstatic-a.akamaihd.net/h1/sprites/core/a3d82f.png);
+  background-size: 352px 288px;
+  background-position: -93px -52px;
+  background-repeat: no-repeat;
+}
+
 .post__header {
   position: relative;
   padding: 14px 20px;
