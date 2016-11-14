@@ -1,0 +1,16 @@
+<div class="user__list row">
+  <% @user_list.each do |user| %>
+      <%= link_to profile_path(user.identify), class: 'profile box three columns' do %>
+          <div class="image">
+            <% if user.avatar.url %>
+                <%= image_tag user.avatar.url %>
+            <% else %>
+                <img src="https://scontent-sit4-1.cdninstagram.com/t51.2885-19/11906329_960233084022564_1448528159_a.jpg">
+            <% end %>
+          </div>
+          <div class="identify">
+            <span><%= user.identify %></span>
+          </div>
+      <% end %>
+  <% end %>
+</div>

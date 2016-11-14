@@ -1,3 +1,27 @@
 // Place all the styles related to the explore controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user__list {
+  margin: 0 -10px -10px 0;
+  padding-top: 10px;
+  .profile {
+    margin: 0 10px 10px 0;
+    color: #000;
+    > .image {
+      padding: 10px;
+      text-align: center;
+      img {
+        width: 64px;
+        height: 64px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+      }
+    }
+    > .identify {
+      padding: 0 10px 10px 10px;
+      text-align: center;
+    }
+  }
+}
