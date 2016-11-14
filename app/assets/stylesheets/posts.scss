@@ -66,6 +66,7 @@
   .post__author {
     .author {
       color: #000;
+      font-weight: bold;
       .thumbnail {
         width: 28px;
         height: 28px;
@@ -131,6 +132,7 @@
     margin: 0;
   }
   .identify {
+    color: #000;
     font-weight: bold;
   }
 }
