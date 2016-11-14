@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :likes
   has_many :comments
+  mount_uploader :avatar, AvatarUploader
 
   has_many :liked_posts, through: :likes, source: :post
   has_many :follower_relations, foreign_key: "followed_id", class_name: "Follow"
