@@ -1,0 +1,6 @@
+<div class="post__footer-like">좋아요 <%= post.likes.size %>개</div>
+<% if current_user.is_like?(post) %>
+    <%= link_to "(좋아요 취소)", post_like_path(post), class: "post__like-toggle", method: "post", remote: true %>
+<% else %>
+    <%= link_to "(좋아요)", post_like_path(post), class: "post__like-toggle", method: "post", remote: true %>
+<% end %>

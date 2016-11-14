@@ -1,0 +1,4 @@
+$(function ($) {
+  $(".post__like-field[data-post-id=<%= @post.id %>]")
+      .html("<%= escape_javascript(render :partial => 'posts/like-field', locals: { post: @post }) %>")
+})(jQuery);

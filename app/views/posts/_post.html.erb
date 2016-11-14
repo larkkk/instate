@@ -20,13 +20,8 @@
     <% end %>
   </div>
   <div class="post__footer">
-    <div class="post__like-field field">
-      <div class="post__footer-like">좋아요 <%= post.likes.size %>개</div>
-      <% if current_user.is_like?(post) %>
-          <%= link_to "(좋아요 취소)", post_like_path(post), class: "post__like-toggle", method: "post" %>
-      <% else %>
-          <%= link_to "(좋아요)", post_like_path(post), class: "post__like-toggle", method: "post" %>
-      <% end %>
+    <div class="post__like-field field" data-post-id="<%= post.id %>">
+      <%= render :partial => 'like-field', locals: { post: post } %>
     </div>
     <div class="field">
       <span class="post__footer-author"><%= post.user.identify %></span>
