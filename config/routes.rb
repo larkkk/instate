@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
   resources :follows, only: [:create, :destroy]
-  resources :explore, only: [:show]
 
-  get '/:identify', to: 'profile#index'
+  get '/explore', to: 'explore#index', as: 'explore'
+  get '/:id', to: 'profile#index', as: 'profile'
 end

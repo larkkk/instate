@@ -16,9 +16,9 @@
     <div class="right">
       <ul class="action__list">
         <li>
-          <a href="#">
-            <div class="explore"></div>
-          </a>
+          <%= link_to explore_path() do %>
+              <div class="explore"></div>
+          <% end %>
         </li>
         <li>
           <a href="#">
@@ -26,9 +26,9 @@
           </a>
         </li>
         <li>
-          <a href="/<%= current_user.identify %>">
-            <div class="profile"></div>
-          </a>
+          <%= link_to profile_path(current_user.identify) do %>
+              <div class="profile"></div>
+          <% end %>
         </li>
       </ul>
     </div>
