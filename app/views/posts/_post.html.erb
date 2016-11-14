@@ -2,9 +2,7 @@
   <div class="post__header">
     <div class="post__author">
       <a href="/<%= post.user.identify %>" class="author">
-        <% if post.user.avatar %>
-            <img class="thumbnail" src="<%= post.user.avatar.thumb.url %>"/>
-        <% end %>
+        <%= image_tag post.user.avatar.thumb.url, class: 'thumbnail' %>
         <%= post.user.identify %>
       </a>
     </div>

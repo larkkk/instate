@@ -2,7 +2,7 @@
   <header class="profile__header row">
     <div class="profile__avatar three columns">
       <div class="profile__avatar-inner">
-        <img src="<%= @find_user.avatar.url %>" class="image">
+        <%= image_tag @find_user.avatar.url, class: 'image' %>
       </div>
     </div>
     <div class="profile__info nine columns">
