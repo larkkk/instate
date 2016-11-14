@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
   resources :follows, only: [:create, :destroy]
+
+  get '/:identify', to: 'profile#index'
 end
