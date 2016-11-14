@@ -35,14 +35,8 @@
     </div>
   </header>
   <div class="profile__content">
-    <ul class="profile__post-list row">
-      <% @find_user.posts.each do |post| %>
-          <% if post.image.url %>
-              <li class="four columns">
-                <%= image_tag post.image.url, class: 'image' %>
-              </li>
-          <% end %>
-      <% end %>
-    </ul>
+    <% @find_user.posts.each do |post| %>
+        <%= render partial: "posts/post", object: post %>
+    <% end %>
   </div>
 </div>
