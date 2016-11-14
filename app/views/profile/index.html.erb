@@ -1,0 +1,48 @@
+<div class="profile__wrap">
+  <header class="profile__header row">
+    <div class="profile__avatar three columns">
+      <div class="profile__avatar-inner">
+        <img src="<%= @find_user.avatar.url %>" class="image">
+      </div>
+    </div>
+    <div class="profile__info nine columns">
+      <div class="field">
+        <span class="identify"><%= @find_user.identify %></span>
+        <a href="#">
+          <button class="profile-button">프로필 편집</button>
+        </a>
+      </div>
+      <div class="field">
+        <ul class="profile__info-list">
+          <li>
+            <span>게시물 <b><%= @find_user.posts.count %></b>개</span>
+          </li>
+          <li>
+            <span>팔로워 <b><%= @find_user.followers.length %></b>명</span>
+          </li>
+          <li>
+            <span>팔로우 <b><%= @find_user.followings.length %></b>명</span>
+          </li>
+        </ul>
+      </div>
+      <div class="field">
+        <ul class="profile__info-list">
+          <li>
+            <b><%= @find_user.name %></b>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="profile__content">
+    <ul class="profile__post-list row">
+      <% @find_user.posts.each do |post| %>
+          <% if post.image.url %>
+              <li class="four columns">
+                <%= image_tag post.image.url, class: 'image' %>
+              </li>
+          <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
