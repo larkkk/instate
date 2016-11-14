@@ -3,12 +3,15 @@ class CommentsController < ApplicationController
   before_action :check_ownership!, only: [:update, :destroy]
 
   def create
+    @post = Post.find_by(id: params[:post_id])
     new_comment = Comment.new(content: params[:content],
                               post_id: params[:post_id],
                               user_id: current_user.id)
     new_comment.save
 
-    redirect_to :back
+    respond_to do |format|
+      format.js
+    end
   end
 
   def destroy

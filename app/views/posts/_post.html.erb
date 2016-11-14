@@ -1,4 +1,4 @@
-<div class="post__wrap box">
+<div class="post__wrap box" data-post-id="<%= post.id %>">
   <div class="post__header">
     <div class="post__author">
       <a href="/<%= post.user.identify %>" class="author">
@@ -20,8 +20,8 @@
     <% end %>
   </div>
   <div class="post__footer">
-    <div class="post__like-field field" data-post-id="<%= post.id %>">
-      <%= render :partial => 'like-field', locals: { post: post } %>
+    <div class="post__like-field field">
+      <%= render :partial => 'posts/like-field', locals: {post: post} %>
     </div>
     <div class="field">
       <span class="post__footer-author"><%= post.user.identify %></span>
@@ -30,22 +30,13 @@
     <div class="field">
       <% if post.comments.present? %>
           <ul class="post__comment-list">
-            <% post.comments.each do |comment| %>
-                <li>
-                  <%= link_to comment.user.identify, '/' + comment.user.identify, class: 'identify' %>
-                  <span class="content"><%= comment.content %></span>
-
-                  <%# if comment.user.id == current_user.id %>
-                  <!--<div><%# link_to "삭제", post_comment_path(post, comment), method: "delete" %></div>-->
-                  <%# end %>
-                </li>
-            <% end %>
+            <%= render :partial => 'posts/comment', locals: {post: post} %>
           </ul>
       <% end %>
     </div>
     <div class="post__comment-field field">
-      <%= form_tag post_comments_path(post), :class => 'comment__form' do %>
-          <%= text_field_tag :content, nil, class: "post__comment-content", placeholder: "댓글 달기...", required: true %>
+      <%= form_tag post_comments_path(post), :id => 'comment_form', :class => 'comment__form', remote: true do %>
+          <%= text_field_tag :content, nil, class: "post__comment-content", placeholder: "댓글 달기...", autocomplete: "off", required: true %>
       <% end %>
     </div>
   </div>

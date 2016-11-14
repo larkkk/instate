@@ -1,0 +1,7 @@
+$(function ($) {
+  var $post_wrap = $(".post__wrap[data-post-id=<%= @post.id %>]");
+
+  $(".post__comment-list", $post_wrap)
+      .html("<%= escape_javascript(render :partial => 'posts/comment', locals: { post: @post }) %>");
+  $("#comment_form .post__comment-content", $post_wrap).val("")
+})(jQuery);

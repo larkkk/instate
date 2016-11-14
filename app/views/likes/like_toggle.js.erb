@@ -1,4 +1,4 @@
 $(function ($) {
-  $(".post__like-field[data-post-id=<%= @post.id %>]")
+  $(".post__wrap[data-post-id=<%= @post.id %>] .post__like-field")
       .html("<%= escape_javascript(render :partial => 'posts/like-field', locals: { post: @post }) %>")
 })(jQuery);
