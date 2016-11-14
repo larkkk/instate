@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Instate</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<header class="global__header">
+  <div class="container">
+    <a href="#" class="logo"></a>
+    <div class="right">
+      <ul class="action__list">
+        <li>
+          <a href="#">
+            <div class="explode"></div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="alert"></div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="profile"></div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<main class="container">
+  <%= yield %>
+</main>
+<footer class="footer">
+  <span class="copyright">@ 2016 Instagram</span>
+</footer>
+</body>
+</html>

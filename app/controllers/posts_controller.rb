@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  layout 'post'
   before_action :authenticate_user!
   before_action :check_ownership, only: [:edit, :update, :destroy]
 
