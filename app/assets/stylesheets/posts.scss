@@ -87,14 +87,22 @@
     .author {
       color: #000;
       font-weight: bold;
-      .thumbnail {
-        width: 28px;
-        height: 28px;
-        margin-right: 10px;
+      .post__thumbnail-wrap {
+        display: inline-block;
+        max-width: 28px;
+        max-height: 28px;
+        margin-right: 5px;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         border-radius: 50%;
+        overflow: hidden;
         vertical-align: middle;
+        > .thumbnail {
+          display: block;
+          max-width: 100%;
+          height: auto;
+          vertical-align: middle;
+        }
       }
     }
   }

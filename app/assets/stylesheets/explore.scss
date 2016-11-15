@@ -9,14 +9,17 @@
     margin: 0 10px 10px 0;
     color: #000;
     > .image {
-      padding: 10px;
-      text-align: center;
+      max-width: 64px;
+      max-height: 64px;
+      margin: 10px auto 10px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      overflow: hidden;
       img {
-        width: 64px;
-        height: 64px;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
+        display: block;
+        max-width: 100%;
+        height: auto;
       }
     }
     > .identify {

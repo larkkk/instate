@@ -2,7 +2,9 @@
   <div class="post__header">
     <div class="post__author">
       <a href="/<%= post.user.identify %>" class="author">
-        <%= image_tag post.user.avatar.thumb.url, class: 'thumbnail' %>
+        <div class="post__thumbnail-wrap">
+          <%= image_tag post.user.avatar.thumb.url, class: 'thumbnail' %>
+        </div>
         <%= post.user.identify %>
       </a>
     </div>
@@ -37,10 +39,10 @@
           <%= text_field_tag :content, nil, class: "post__comment-content", placeholder: "댓글 달기...", autocomplete: "off", required: true %>
       <% end %>
     </div>
-  </div>
 
-  <%# if current_user.id == post.user.id %>
-  <%# link_to "삭제", post_path(post), method: "delete", class: "right" %>
-  <%# link_to "수정", edit_post_path(post), class: "right" %>
-  <%# end %>
+    <%# if current_user.id == post.user.id %>
+    <%# link_to "삭제", post_path(post), method: "delete", class: "right" %>
+    <%# link_to "수정", edit_post_path(post), class: "right" %>
+    <%# end %>
+  </div>
 </div>
