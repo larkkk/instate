@@ -21,6 +21,8 @@ class User < ApplicationRecord
   end
 
   def default
-    self.followings = [User.first]
+    if User.first
+      self.followings = [User.first]
+    end
   end
 end
