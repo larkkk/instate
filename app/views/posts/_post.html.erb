@@ -28,11 +28,11 @@
       <span class="post__footer-content"><%= post.content %></span>
     </div>
     <div class="field">
-      <% if post.comments.present? %>
-          <ul class="post__comment-list">
+      <ul class="post__comment-list">
+        <% if post.comments.present? %>
             <%= render :partial => 'posts/comment', locals: {post: post} %>
-          </ul>
-      <% end %>
+        <% end %>
+      </ul>
     </div>
     <div class="post__comment-field field">
       <%= form_tag post_comments_path(post), :id => 'comment_form', :class => 'comment__form', remote: true do %>
