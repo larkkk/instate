@@ -15,8 +15,7 @@ class PostsController < ApplicationController
       view_users << u
     end
 
-    @posts = Post.where(user_id: view_users).order('created_at desc')
-    @posts_count = current_user.posts.length
+    @posts = Post.where(user_id: view_users).page(params[:page]).per(10).order('created_at desc')
   end
 
   def create
