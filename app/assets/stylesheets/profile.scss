@@ -9,15 +9,16 @@
 .profile__avatar {
   text-align: center;
   .profile__avatar-inner {
-    padding: 0 20px;
+    max-width: 150px;
+    max-height: 150px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    overflow: hidden;
     > .image {
-      max-width: 150px;
-      max-height: 150px;
-      width: 100%;
-      height: 100%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      border-radius: 50%;
+      display: block;
+      max-width: 100%;
+      height: auto;
     }
   }
 }

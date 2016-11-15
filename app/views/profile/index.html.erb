@@ -1,11 +1,11 @@
 <div class="profile__wrap">
   <header class="profile__header row">
-    <div class="profile__avatar three columns">
+    <div class="profile__avatar four columns">
       <div class="profile__avatar-inner">
         <%= image_tag @find_user.avatar.url, class: 'image' %>
       </div>
     </div>
-    <div class="profile__info nine columns">
+    <div class="profile__info eight columns">
       <div class="field">
         <span class="identify"><%= @find_user.identify %></span>
         <% if @find_user == current_user %>
