@@ -2,9 +2,9 @@
     <li>
       <%= link_to comment.user.identify, profile_path(comment.user.identify), class: 'identify' %>
       <span class="content"><%= comment.content %></span>
-
-      <%# if comment.user.id == current_user.id %>
-      <!--<div><%# link_to "삭제", post_comment_path(post, comment), method: "delete" %></div>-->
-      <%# end %>
     </li>
 <% end %>
+
+<%# if comment.user.id == current_user.id %>
+<%# link_to "삭제", post_comment_path(post, comment), method: "delete" %>
+<%# end %>
