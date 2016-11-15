@@ -51,7 +51,7 @@
     </div>
   </header>
   <div class="profile__content">
-    <% @find_user.posts.each do |post| %>
+    <% @posts.each do |post| %>
         <%= render partial: "posts/post", object: post %>
     <% end %>
   </div>
