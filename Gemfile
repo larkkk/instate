@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'kaminari'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'

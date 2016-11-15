@@ -5,8 +5,12 @@
   <% end %>
 </div>
 
-<% @posts.each do |post| %>
-    <%= render partial: "post", object: post %>
-<% end %>
+<div id="post__list">
+  <% @posts.each do |post| %>
+      <%= render partial: "post", object: post %>
+  <% end %>
+</div>
+
+<%= paginate @posts %>
 
 <%= link_to 'logout', destroy_user_session_path(), method: :delete %>
