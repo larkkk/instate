@@ -28,7 +28,8 @@
 .action__list {
   margin: 0;
   list-style: none;
-  li {
+  > li {
+    position: relative;
     display: inline-block;
     margin-bottom: 0;
     margin-left: 15px;
@@ -87,23 +88,6 @@
     .author {
       color: #000;
       font-weight: bold;
-      .post__thumbnail-wrap {
-        display: inline-block;
-        max-width: 28px;
-        max-height: 28px;
-        margin-right: 5px;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-        overflow: hidden;
-        vertical-align: middle;
-        > .thumbnail {
-          display: block;
-          max-width: 100%;
-          height: auto;
-          vertical-align: middle;
-        }
-      }
     }
   }
   .right {
@@ -113,6 +97,37 @@
   }
   .post__date {
     color: #666;
+  }
+}
+
+.thumbnail__wrap {
+  display: inline-block;
+  max-width: 28px;
+  max-height: 28px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+  vertical-align: middle;
+  > .thumbnail {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+}
+
+.post-thumbnail__wrap {
+  display: inline-block;
+  max-width: 40px;
+  max-height: 40px;
+  overflow: hidden;
+  vertical-align: middle;
+  > .thumbnail {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
   }
 }
 
@@ -178,4 +193,51 @@ input.post__comment-content {
 
 .comment__form {
   margin: 0;
+}
+
+.notification__list {
+  width: 100%;
+  margin: 0;
+  > li {
+    position: relative;
+    padding: 12px;
+    &:after {
+      border-bottom: 1px solid #dbdbdb;
+      bottom: 0;
+      content: '';
+      height: 0;
+      left: 58px;
+      position: absolute;
+      right: 12px;
+    }
+    &:last-of-type::after {
+      border-bottom: none;
+    }
+  }
+  .notification_item {
+    position: relative;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    > .image {
+      display: table-cell;
+      width: 28px;
+      vertical-align: middle;
+      > img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    > .content {
+      display: table-cell;
+      width: 100%;
+      padding: 0 12px;
+      vertical-align: middle;
+    }
+    > .post_image {
+      display: table-cell;
+      width: 40px;
+      vertical-align: middle;
+    }
+  }
 }

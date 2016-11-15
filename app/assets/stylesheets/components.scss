@@ -24,3 +24,46 @@ input.button-blue {
     color: #fff;
   }
 }
+
+.notification-modal__wrap {
+  position: absolute;
+  top: 40px;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin-left: -0.5em;
+    top: 3px;
+    left: 10%;
+    box-sizing: border-box;
+    border: 8px solid black;
+    border-color: #fff #fff transparent transparent;
+    transform-origin: 0 0;
+    transform: rotate(-45deg);
+    box-shadow: 3px -3px 3px 0 rgba(0, 0, 0, 0.1);
+    z-index: 13;
+  }
+  .modal__screen {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+  }
+  .modal__content {
+    position: relative;
+    display: block;
+    margin-left: -423px;
+    background: #fff;
+    border: solid 1px #dbdbdb;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .13);
+    z-index: 11;
+    width: 500px;
+    max-height: 362px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}

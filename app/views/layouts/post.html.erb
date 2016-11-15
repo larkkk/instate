@@ -21,8 +21,32 @@
           <% end %>
         </li>
         <li>
-          <a href="#">
+          <a href="#" onclick="showNotificationModal(this); return false">
             <div class="alert"></div>
+            <div class="notification-modal__wrap" style="display: none">
+              <div class="modal__screen"></div>
+              <div class="modal__content">
+                <ul class="notification__list">
+                  <% for i in 1..10 %>
+                      <li>
+                        <div class="notification_item">
+                          <div class="image">
+                            <div class="thumbnail__wrap">
+                              <img src="https://scontent-sit4-1.cdninstagram.com/t51.2885-19/11906329_960233084022564_1448528159_a.jpg" class="thumbnail">
+                            </div>
+                          </div>
+                          <div class="content">이한종님이 회원님의 사진에 댓글을 달았습니다</div>
+                          <div class="post_image">
+                            <div class="post-thumbnail__wrap">
+                              <img src="https://scontent-icn1-1.cdninstagram.com/t51.2885-15/s150x150/e35/15043611_1683198595324191_6787471426438823936_n.jpg?ig_cache_key=MTM4Mzc5MDQzODU0NDEzMTE3Nw%3D%3D.2" class="thumbnail">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
           </a>
         </li>
         <li>

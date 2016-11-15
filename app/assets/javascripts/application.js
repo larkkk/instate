@@ -15,3 +15,18 @@
 //= require jquery.infinitescroll
 //= require turbolinks
 //= require_tree .
+
+function showNotificationModal(self) {
+    var $this = $(self);
+    var $modal_wrap = $this.find('.notification-modal__wrap');
+
+    if ($modal_wrap.hide) {
+        $modal_wrap.show();
+    }
+
+    $(".modal__screen").on('click', function (e) {
+        e.stopPropagation();
+        $(this).off('click');
+        $modal_wrap.hide();
+    });
+}
